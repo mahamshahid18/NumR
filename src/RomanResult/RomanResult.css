@@ -1,22 +1,21 @@
 .roman-result-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 4rem);
     height: calc(50vh - 4rem);
     padding: 2rem;
-    color: #ecf0f1;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     background-color: #e53935;
-    width: calc(100vw - 4rem);
-    display: flex;
-    flex-direction: column;
+    color: #ecf0f1;
 }
   
 .roman-result {
-    background-color: #ef5350;
     border-radius: 2px;
-    padding: 1rem;
     font-size: 2.625rem;
     font-weight: bold;
-    margin-top: 2rem;
     text-align: center;
-    /* font-family: 'Lato', sans-serif; */
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #ef5350;
 }

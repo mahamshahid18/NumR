@@ -1,6 +1,6 @@
 import React from 'react';
 import './InputContainer.css';
-import { getRomanEquivalent } from '../roman-converter.util';
+import { getRomanEquivalent } from '../utils/roman-converter.util';
 
 interface Props {
     inputValue: number | undefined;
