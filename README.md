@@ -1,14 +1,14 @@
 # NumR = The Integer <-> Roman Converter 🤓
 NumR is a simple app hacked together in a few hours which converts integer numbers into their _'Roman numeral'_ equivalent
 
-# The Technical Details
+## The Technical Details
 
-## The Tech
+### The Tech
 React with Typescript was used to build this. The initial version was hacked together on Codepen. The project was created with `create-react-app`.
 
-## App Structure
+### App Structure
 
-### App component
+#### App component
 The app component uses some internal state to hold value of the input integer, as well as the result of the conversion. This state as well as state modifiers are passed to child components
 
 App component just renders two child components.
@@ -23,17 +23,21 @@ This component just displays the result of the conversion
 Plain CSS is used for styling. There is no specific reason for choosing this other than the fact that it was easy and quick to just write some CSS from scratch (for hacking this together).
 Each component has its own scoped styles. Separate `.css` files are used as this came default with the project created with `create-react-app`
 
-## Tests
+### Tests
 Some very simple basic unit tests are included which test the util which is exported (`getRomanEquivalent` from => `roman-converter.util.ts`)
 
 ## Demo
-## Installation Instructions
+### Installation Instructions
 - Clone the repo/download the code
 - Run `npm i`
 - Run `npm start`
 - Navigate to `http://localhost:3000/` to see the local version
 
-# Possible Improvements
+### Screen Capture
+With the link below, you can take a quick peek at `NumR` in action 😉
+https://user-images.githubusercontent.com/12479952/111004682-c0014900-8389-11eb-879d-f6e670ee1ad8.mov
+
+## Possible Improvements
 - The basic logic for conversion doesn't account for certain cases. This gives some faulty conversions for certain cases. This is definitely the most important thing which can be improved
 - Usage of scss would make the styling cleaner (with the use of variables etc)
 - The UI looks better on smaller screens but for bigger screens, it looks odd. This can be improved as well with some CSS magic 👩‍💻
