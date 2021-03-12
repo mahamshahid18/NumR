@@ -26,14 +26,10 @@ const getDivisionSet = (number: number): number[] => {
 }
 
 const getDivisorToConsider = (divisionResultMap: DivisionResult[]): DivisionResult => {
-  const quotients = divisionResultMap.map((item: DivisionResult) => parseInt(item.result as any));
+  const quotients = divisionResultMap.map((item: DivisionResult) => parseInt(item?.result as any));
   const maxQuotient = Math.min(...quotients);
 
-  const divisor = divisionResultMap.filter((divisionObject: DivisionResult) => parseInt(divisionObject.result as any) === maxQuotient)[0];
-
-  // console.log(divisionResultMap); 
-  // console.log(quotients);  
-  // console.log(divisor)
+  const divisor = divisionResultMap.filter((divisionObject: DivisionResult) => parseInt(divisionObject?.result as any) === maxQuotient)[0];
 
   return divisor;
 }
@@ -71,24 +67,17 @@ export const getRomanEquivalent = (number: number): string => {
       
       if (parseInt(result as any) > 0) {
         divisionResultMap.push({
-            divisor: divisionNumber,
-            result,
-            remainder
+          divisor: divisionNumber,
+          result,
+          remainder
         });
       }
     });
     
-      // console.log('divisior to consider: ', getDivisorToConsider(divisionResultMap));
-    
     const divisorToConsider = getDivisorToConsider(divisionResultMap);
-    // console.log('divisior to consider: ', divisorToConsider);
-    // console.log('---------recursive call now going through---------')
-    const romanRemainder = getRomanEquivalent(divisorToConsider.remainder);
+    const romanRemainder = getRomanEquivalent(divisorToConsider?.remainder);
     
-    // console.log('remainder resolved: ', romanRemainder);
-  
-    
-    const romanEquivalent = `${intToRomanMap[divisorToConsider.divisor].repeat(divisorToConsider.result)}${romanRemainder}`;
+    const romanEquivalent = `${intToRomanMap[divisorToConsider?.divisor].repeat(divisorToConsider?.result)}${romanRemainder}`;
   
     return romanEquivalent;
   }
