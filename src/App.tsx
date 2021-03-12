@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { getRomanEquivalent } from './roman-converter.util';
 
-function App() {
+export const App = () => {
+  const [inputValue, setInputValue] = React.useState<number>();
+  const [romanNumber, setRomanNumber] = React.useState<string | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div>
+        <label>Input an integer</label>
+        <input type="number" value={inputValue} onChange={(event) => setInputValue(parseInt(event.currentTarget.value))} />
+        <button onClick={() => {
+            const romanNumber = getRomanEquivalent(inputValue as number);
+            setRomanNumber(romanNumber);
+        }}>
+          Convert
+        </button>
+      </div>
+      <br/> <br/>
+      <div>
+        <span>The output is: </span>
+        <span>
+          {romanNumber}
+        </span>
+      </div>
+    </React.Fragment>
   );
 }
 
