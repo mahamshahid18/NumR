@@ -39,5 +39,6 @@ https://user-images.githubusercontent.com/12479952/111004682-c0014900-8389-11eb-
 
 ## Possible Improvements
 - The basic logic for conversion doesn't account for certain cases. This gives some faulty conversions for certain cases. This is definitely the most important thing which can be improved
+- Allow conversion from Roman numerals to Integer equivalents (this use-case isn't accounted for with this version)
 - Usage of scss would make the styling cleaner (with the use of variables etc)
 - The UI looks better on smaller screens but for bigger screens, it looks odd. This can be improved as well with some CSS magic 👩‍💻
