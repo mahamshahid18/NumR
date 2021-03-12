@@ -31,9 +31,9 @@ const getDivisorToConsider = (divisionResultMap: DivisionResult[]): DivisionResu
 
   const divisor = divisionResultMap.filter((divisionObject: DivisionResult) => parseInt(divisionObject.result as any) === maxQuotient)[0];
 
-  console.log(divisionResultMap); 
-  console.log(quotients);  
-  console.log(divisor)
+  // console.log(divisionResultMap); 
+  // console.log(quotients);  
+  // console.log(divisor)
 
   return divisor;
 }
@@ -53,7 +53,7 @@ export const getRomanEquivalent = (number: number): string => {
       400: 'CD',
       500: 'D',
       900: 'CM',
-      1000: 'M'
+      1000: 'M',
     };
     
     const intToRomanKeys = Object.keys(intToRomanMap).map(key => parseInt(key));
