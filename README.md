@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# NumR = The Integer <-> Roman Converter 🤓
+NumR is a simple app hacked together in a few hours which converts integer numbers into their _'Roman numeral'_ equivalent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Technical Details
 
-## Available Scripts
+## The Tech
+React with Typescript was used to build this. The initial version was hacked together on Codepen. The project was created with `create-react-app`.
 
-In the project directory, you can run:
+## App Structure
 
-### `npm start`
+### App component
+The app component uses some internal state to hold value of the input integer, as well as the result of the conversion. This state as well as state modifiers are passed to child components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+App component just renders two child components.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### InputContainer component
+The `InputContainer` renders an input element for getting the input integer. It also has a button which calls the util `getRomanEquivalent` to get converted roman numeral for the input integer. It sets this in the state (that was passed down from App component)
 
-### `npm test`
+#### RomanResult component
+This component just displays the result of the conversion
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Styling
+Plain CSS is used for styling. There is no specific reason for choosing this other than the fact that it was easy and quick to just write some CSS from scratch (for hacking this together).
+Each component has its own scoped styles. Separate `.css` files are used as this came default with the project created with `create-react-app`
 
-### `npm run build`
+## Tests
+Some very simple basic unit tests are included which test the util which is exported (`getRomanEquivalent` from => `roman-converter.util.ts`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
+## Installation Instructions
+- Clone the repo/download the code
+- Run `npm i`
+- Run `npm start`
+- Navigate to `http://localhost:3000/` to see the local version
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Possible Improvements
+- The basic logic for conversion doesn't account for certain cases. This gives some faulty conversions for certain cases. This is definitely the most important thing which can be improved
+- Usage of scss would make the styling cleaner (with the use of variables etc)
+- The UI looks better on smaller screens but for bigger screens, it looks odd. This can be improved as well with some CSS magic 👩‍💻
