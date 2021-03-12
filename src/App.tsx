@@ -8,8 +8,10 @@ export const App = () => {
 
   return (
     <React.Fragment>
-      <div>
-        <label>Input an integer</label>
+      <div className="input-container">
+        <h1>
+          Input an integer
+        </h1>
         <input type="number" value={inputValue} onChange={(event) => setInputValue(parseInt(event.currentTarget.value))} />
         <button onClick={() => {
             const romanNumber = getRomanEquivalent(inputValue as number);
@@ -18,12 +20,18 @@ export const App = () => {
           Convert
         </button>
       </div>
-      <br/> <br/>
-      <div>
-        <span>The output is: </span>
-        <span>
-          {romanNumber}
-        </span>
+
+      <div className="roman-result-container">
+        <h1>
+          Roman equivalent
+        </h1>
+        {
+          romanNumber && (
+            <span className="roman-result">
+              {romanNumber}
+            </span>
+          )
+        }
       </div>
     </React.Fragment>
   );
