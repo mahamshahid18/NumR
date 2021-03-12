@@ -34,7 +34,7 @@ Some very simple basic unit tests are included which test the util which is expo
 - Navigate to `http://localhost:3000/` to see the local version
 
 ### Screen Capture
-With the link below, you can take a quick peek at `NumR` in action 😉
+With the link below, you can take a quick peek at `NumR` in action 😉  
 https://user-images.githubusercontent.com/12479952/111004682-c0014900-8389-11eb-879d-f6e670ee1ad8.mov
 
 ## Possible Improvements
