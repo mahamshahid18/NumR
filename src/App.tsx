@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { getRomanEquivalent } from './roman-converter.util';
+import { InputContainer } from './InputContainer/InputContainer';
+import { RomanResult } from './RomanResult/RomanResult';
 
 export const App = () => {
   const [inputValue, setInputValue] = React.useState<number>();
@@ -8,31 +9,13 @@ export const App = () => {
 
   return (
     <React.Fragment>
-      <div className="input-container">
-        <h1>
-          Input an integer
-        </h1>
-        <input type="number" value={inputValue} onChange={(event) => setInputValue(parseInt(event.currentTarget.value))} />
-        <button onClick={() => {
-            const romanNumber = getRomanEquivalent(inputValue as number);
-            setRomanNumber(romanNumber);
-        }}>
-          Convert
-        </button>
-      </div>
+      <InputContainer
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        setRomanNumber={setRomanNumber}
+      />
 
-      <div className="roman-result-container">
-        <h1>
-          Roman equivalent
-        </h1>
-        {
-          romanNumber && (
-            <span className="roman-result">
-              {romanNumber}
-            </span>
-          )
-        }
-      </div>
+      <RomanResult romanNumber={romanNumber} />
     </React.Fragment>
   );
 }
